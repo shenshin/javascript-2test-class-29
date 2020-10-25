@@ -17,6 +17,17 @@ const myFunction = () => {
 myFunction();
 ```
 
+---
+
+timeout is set 4 times inside an array. When the function is called,
+the loop is finished long ago, but variable i declared as a var is hoisted
+to the global scope and later when callback function is called, the global
+value (4) is being printed. Otherwise, if i is declared as 'let', it is
+being captured by closure from the local scope of myFunction and thus it
+different on each later callback.
+
+---
+
 ## Question 2:
 
 Explain what and why would be logged on the console?
