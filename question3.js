@@ -21,11 +21,13 @@ function injectBooksToDOM(arrayOfObjects) {
     const author = document.createElement('h3');
     author.innerHTML = object.author;
     root.appendChild(author);
-    const image = document.createElement('img');
-    image.src = object.coverURL;
-    root.appendChild(image);
+    if (object.coverURL === '') {
+      console.error('Some if the images could not be found');
+    } else {
+      const image = document.createElement('img');
+      image.src = object.coverURL;
+      root.appendChild(image);
+    }
   });
-  /// why on earth should it return true or false?
 }
-
 injectBooksToDOM(books);

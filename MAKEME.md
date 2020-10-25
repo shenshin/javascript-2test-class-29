@@ -19,12 +19,14 @@ myFunction();
 
 ---
 
-timeout is set 4 times inside an array. When the function is called,
-the loop is finished long ago, but variable i declared as a var is hoisted
+All answers are my personal opinion.
+
+Timeout is set 4 times inside a LOOP. When the function is called,
+the loop is finished long ago, but the variable 'i' declared as a var is hoisted
 to the global scope and later when callback function is called, the global
-value (4) is being printed. Otherwise, if i is declared as 'let', it is
-being captured by closure from the local scope of myFunction and thus it
-different on each later callback.
+value (4) is being printed 4 times. Otherwise, if i is declared as 'let', it is
+being captured by closure from the local scope of myFunction and thus it IS
+different on each later callback (0,1,2,3).
 
 ---
 
@@ -71,8 +73,7 @@ Create a function, called injectBooksToDOM, that: - Takes 1 argument: an array o
 
 ---
 
-why the array is not finished? what does it mean "Returns true if it works"?
-Why it may not work? I don't catch the question!
+why the array is not finished?
 See question3.html
 
 ---
